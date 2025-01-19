@@ -38,6 +38,8 @@ function handleCalculation(operation) {
         case "divide":
             result = divide(number1, number2);
             break;
+        default:
+            result = "Invalid operation";
     }
 
     document.getElementById("calculation-result").textContent = result;
