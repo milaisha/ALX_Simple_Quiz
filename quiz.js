@@ -1,9 +1,9 @@
+// Correct answer for the quiz
+const correctAnswer = "4";
+
 // Function to check the user's answer
 function checkAnswer() {
-    // Define the correct answer
-    const correctAnswer = "4";
-
-    // Get the user's selected answer
+    // Retrieve the selected answer
     const userAnswer = document.querySelector('input[name="quiz"]:checked');
 
     // Get the feedback element
@@ -27,4 +27,5 @@ function checkAnswer() {
 }
 
 // Add event listener to the submit button
-document.getElementById("submit-answer").addEventListener("click", checkAnswer);
+const submitButton = document.getElementById("submit-answer");
+submitButton.addEventListener("click", checkAnswer);

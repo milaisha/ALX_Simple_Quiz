@@ -1,4 +1,3 @@
-// Arithmetic functions
 function add(number1, number2) {
     return number1 + number2;
 }
@@ -48,7 +47,6 @@ function handleCalculation(operation) {
     document.getElementById("calculation-result").textContent = result;
 }
 
-// Attach event listeners to each button
 document.getElementById("add").addEventListener("click", function () {
     handleCalculation("add");
 });
