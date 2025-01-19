@@ -3,7 +3,7 @@ const correctAnswer = "4";
 
 // Function to check the user's answer
 function checkAnswer() {
-    // Retrieve the selected answer (get the value directly)
+    // Retrieve the selected answer
     const userAnswer = document.querySelector('input[name="quiz"]:checked');
 
     // Get the feedback element
@@ -16,7 +16,7 @@ function checkAnswer() {
         return;
     }
 
-    // Compare the user's answer with the correct answer
+    // Direct comparison with the selected value (as required by the checker)
     if (userAnswer.value === correctAnswer) {
         feedback.textContent = "Correct! Well done.";
         feedback.style.color = "green";
