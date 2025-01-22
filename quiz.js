@@ -1,31 +1,29 @@
-// Correct answer for the quiz
-const correctAnswer = "4";
-
-// Function to check the user's answer
+// function that checks the answer
 function checkAnswer() {
-    // Retrieve the selected answer
-    const userAnswer = document.querySelector('input[name="quiz"]:checked');
+    // Correct answer for the quiz question
+    const correctAnswer = "4";
 
-    // Get the feedback element
-    const feedback = document.getElementById("feedback");
+    // Get the user's selected answer
+    const userAnswerElement = document.querySelector('input[name="quiz"]:checked');
 
-    // Check if an answer was selected
-    if (!userAnswer) {
-        feedback.textContent = "Please select an answer!";
-        feedback.style.color = "red";
-        return;
-    }
+    // Ensure an option is selected before proceeding
+    if (userAnswerElement) {
+        const userAnswer = userAnswerElement.value;
+        const feedbackElement = document.getElementById('feedback');
 
-    // Direct comparison with the selected value (as required by the checker)
-    if (userAnswer.value === correctAnswer) {
-        feedback.textContent = "Correct! Well done.";
-        feedback.style.color = "green";
+        // Compare the user answer with the correct answer
+        if (userAnswer === correctAnswer) {
+            feedbackElement.textContent = "Correct! Well done.";
+            feedbackElement.style.color = "green";
+        } else {
+            feedbackElement.textContent = "That's incorrect. Try again!";
+            feedbackElement.style.color = "red";
+        }
     } else {
-        feedback.textContent = "That's incorrect. Try again!";
-        feedback.style.color = "red";
+        alert("Please select an answer before submitting.");
     }
 }
 
-// Add event listener to the submit button
-const submitButton = document.getElementById("submit-answer");
-submitButton.addEventListener("click", checkAnswer);
+// Add event listener to the "Submit Answer" button
+const submitButton = document.getElementById('submit-answer');
+submitButton.addEventListener('click', checkAnswer);
